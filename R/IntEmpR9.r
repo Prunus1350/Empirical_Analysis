@@ -1,9 +1,7 @@
 # 	法学セミナー「法律家のための実証分析入門」第9回 Rソースコード
 #	(C) 2012 MORITA Hatsuru
 
-setwd("c:/Users/MORITA Hatsuru/Documents/ec/")
-
-crimes <-  read.csv("criminal.csv", header=TRUE)
+crimes <-  read.csv("../csv/criminal.csv", header=TRUE)
 
 crimes$lncrime <- log(crimes$crime)
 for (i in 1:length(crimes$lncrime)){

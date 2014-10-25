@@ -6,9 +6,7 @@ rm(list=ls())
 library(foreign)
 library(sampleSelection)
 
-setwd("c:/Users/MORITA Hatsuru/Documents/ec/")
-
-mroz <- read.dta("mroz.dta")
+mroz <- read.dta("../csv/mroz.dta")
 
 result.ols <- lm(lwage~educ+exper+expersq, data=mroz)
 

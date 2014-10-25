@@ -6,8 +6,6 @@ library(R2WinBUGS)
 library(BRugs)
 library(coda)
 
-setwd("c:/Users/Hatsuru/Documents/ec/")
-
 #
 # plotting the update from prior to posterior
 

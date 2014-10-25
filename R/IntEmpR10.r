@@ -3,8 +3,6 @@
 
 library(lattice)
 
-setwd("c:/Users/MORITA Hatsuru/Documents/ec/")
-
 # setting conditions
 n_obs1 <- 100
 n_obs2 <- 50

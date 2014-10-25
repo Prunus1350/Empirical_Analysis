@@ -3,9 +3,7 @@
 
 library(lattice)
 
-setwd("c:/Users/MORITA Hatsuru/Documents/ec/")
-
-crimes <-  read.csv("criminal.csv", header=TRUE)
+crimes <-  read.csv("../csv/criminal.csv", header=TRUE)
 
 crimes$lncrime <- log(crimes$crime)
 for (i in 1:length(crimes$lncrime)){

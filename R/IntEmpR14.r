@@ -9,8 +9,6 @@ library(nnet)
 library(MNP)
 library(coda)
 
-setwd("c:/Users/MORITA Hatsuru/Documents/ec/")
-
 ## writing a graph for ordered probit
 
 Xb <- c(0.3,1.1,2.2)
@@ -40,8 +38,8 @@ dev.print(file="oprobit.eps")
 sink(file="IntEmpR14.r.log",type="output",split=TRUE)
 
 #	Gendaika data
-gd_bin <- read.table("gdb.txt", header=TRUE)
-gd_mul <- read.table("gdm.txt", header=TRUE)
+gd_bin <- read.table("../csv/gdb.txt", header=TRUE)
+gd_mul <- read.table("../csv/gdm.txt", header=TRUE)
 
 #	regressions of binary dependent variable
 

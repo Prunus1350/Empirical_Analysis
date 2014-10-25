@@ -5,9 +5,6 @@ rm(list=ls())
 
 library(lattice)
 
-setwd("c:/Users/MORITA Hatsuru/Documents/ec/")
-
-
 t <- c(1:49)
 lambda <- 0.4
 exponential <- rep(lambda, 49)
@@ -15,7 +12,7 @@ weibull08 <- (0.4*t)^(-0.2)*0.4*0.8
 weibull12 <- (0.4*t)^(0.2)*0.4*1.2
 loglogistic2 <- ((0.4*t))*0.4*4/(1+(0.4*t)^2)
 
-xyplot(loglogistic3~t,
+xyplot(loglogistic2~t,
 	xlab = "Time",
 	ylab = "Probability (Hazard Rate)",
 	ylim = c(-0.1,1.1),

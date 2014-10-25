@@ -4,8 +4,6 @@
 library(lattice)
 library(MASS)
 
-setwd("c:/Users/MORITA Hatsuru/Documents/ec/")
-
 # writing graphs for ML
 
 y <- c(1.364, 0.235, -0.846, -0.285, -1.646)
@@ -98,11 +96,11 @@ pop <- abs(rnorm(n_obs, mean=100, sd=20))
 bankruptcy <- floor(exp(-4 + 0.04*pop - law + rnorm (n_obs, mean=0, sd =1)))
 bankruptcy
 support <- data.frame(cbind(bankruptcy, pop, law))
-write.csv(support, file="bankruptcy_sim.csv", row.names=FALSE)
+write.csv(support, file="../csv/bankruptcy_sim.csv", row.names=FALSE)
 
 # simulation
 
-support <- read.csv(file="bankruptcy_sim.csv", header=TRUE)
+support <- read.csv(file="../csv/bankruptcy_sim.csv", header=TRUE)
 
 histogram(~bankruptcy, data=support, breaks=20, type="percent")
 

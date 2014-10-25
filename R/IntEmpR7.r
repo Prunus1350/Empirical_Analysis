@@ -14,7 +14,7 @@ xyplot(y~x,
 		panel.xyplot(x,y, type="l", col="blue", lty=2)
 		panel.xyplot(x,z, type="l", col="red", lty=1)
 	},
-	key = list(text=list(c("標準正規分布","t分布 (df=3)")),
+	key = list(text=list(c("standard normal dist.","t dist. (df=3)")),
 		lines=list(col=c("blue","red"),lty=c(2,1)), 
 		space="top", border=T
 	)

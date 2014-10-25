@@ -3,8 +3,7 @@
 
 library(lattice)
 
-setwd("c:/Users/MORITA Hatsuru/Documents/ec/")
-crimes <-  read.csv("criminal.csv", header=TRUE)
+crimes <-  read.csv("../csv/criminal.csv", header=TRUE)
 
 result.ols <- lm(crime~unemp, data=crimes)
 summary(result.ols)

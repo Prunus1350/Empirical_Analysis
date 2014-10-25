@@ -3,8 +3,7 @@
 
 library(lattice)
 
-setwd("c:/Users/MORITA Hatsuru/Documents/ec/")
-porco <-  read.csv("PorcoRosso.csv", header=TRUE)
+porco <-  read.csv("../csv/PorcoRosso.csv", header=TRUE)
 
 result.multi <- lm(flying~age+educ+spouseeduc+otherfaminc+exp+expsq+kids6+kids18, data=porco)
 summary(result.multi)

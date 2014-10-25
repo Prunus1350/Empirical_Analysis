@@ -3,8 +3,7 @@
 
 library(lattice)
 
-setwd("c:/Users/Hatsuru/Documents/ec/")
-akb <-  read.csv("AKB2012.csv", header=TRUE)
+akb <-  read.csv("../csv/AKB2012.csv", header=TRUE)
 
 akb$logvote <- log(akb$vote)
 akb$logrank <- log(akb$rank)
