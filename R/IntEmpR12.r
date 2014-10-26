@@ -8,15 +8,15 @@ porco <-  read.csv("../csv/PorcoRosso.csv", header=TRUE)
 result.multi <- lm(flying~age+educ+spouseeduc+otherfaminc+exp+expsq+kids6+kids18, data=porco)
 summary(result.multi)
 
+# P138 表12-3 豚はなぜ飛ぶのか？ : LPM
 result.multi2 <- lm(flying~age+educ+spouseeduc+otherfaminc+exp+kids6+kids18, data=porco)
 summary(result.multi2)
 
-result.multi.prb <- glm(flying~age+educ+spouseeduc+otherfaminc+exp+kids6+kids18, data=porco, family=binomial(link="probit"))
-summary(result.multi.prb)
-
+# Probit
 result.multi2.prb <- glm(flying~age+educ+spouseeduc+otherfaminc+exp+kids6+kids18, data=porco, family=binomial(link="probit"))
 summary(result.multi2.prb)
 
+# Logit
 result.multi2.lgt <- glm(flying~age+educ+spouseeduc+otherfaminc+exp+kids6+kids18, data=porco, family=binomial(link="logit"))
 summary(result.multi2.lgt)
 
