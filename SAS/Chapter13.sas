@@ -34,3 +34,48 @@ proc sgplot data = temp3;
     needle x = x y = z;
 run;
 
+
+data bankruptcy_sim;
+    infile "&indir.bankruptcy_sim.csv" dsd missover firstobs = 2;
+    attrib bankruptcy length = 8 label = ""
+           pop        length = 8 label = ""
+           raw        length = 8 label = ""
+    ;
+    input bankruptcy pop raw;
+run;
+
+proc sgplot data = bankruptcy_sim;
+    vbar bankruptcy / stat = freq;
+run;
+
+proc sgplot data = bankruptcy_sim;
+    histogram bankruptcy / binwidth = 1;
+run;
+
+proc sgplot data = bankruptcy_sim;
+    scatter x = bankruptcy y = pop / group = raw;
+run;
+
+proc sgscatter data = bankruptcy_sim;
+    matrix bankruptcy pop raw;
+run;
+
+proc reg data = bankruptcy_sim outest = reg_result;
+    model bankruptcy = pop raw / aic;
+run;
+/*
+proc reg data = bankruptcy_sim plots = diagnostics(stats=(aic));
+    model bankruptcy = pop raw;
+run;
+*/
+
+proc genmod data = bankruptcy_sim;
+    model bankruptcy = pop raw / dist = poisson
+                                 link = log
+    ;
+run;
+
+proc genmod data = bankruptcy_sim;
+    model bankruptcy = pop raw / dist = negbin
+    ;
+run;
